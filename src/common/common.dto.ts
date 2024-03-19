@@ -32,6 +32,7 @@ export class ChangePassword{
 
 export class RequestOtpResendDto {
     @IsEmail()
+    @IsNotEmpty()
     email: string;
   }
 

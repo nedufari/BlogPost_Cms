@@ -14,7 +14,7 @@ export class UserController{
     }
 
     @Post('/verify-email')
-    async Verify_email(@Body()dto:VerifyOtpDto,):Promise<{isValid:boolean; accessToken:any}>{
+    async Verify_email(@Body()dto:VerifyOtpDto):Promise<{isValid:boolean; accessToken:any}>{
         return await this.userservice.SuperAdminverifyEmail(dto)
     }
 
@@ -22,7 +22,7 @@ export class UserController{
 
     @Post('/resend-verification-link')
     async resendVerificationLink(@Body()dto:RequestOtpResendDto):Promise<{message:string}>{
-        return await this.userservice.AdminResendemailVerificationLink(dto)
+        return await this.userservice.ResendExpiredOtp(dto)
 
     }
 
