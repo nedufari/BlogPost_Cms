@@ -11,6 +11,9 @@ export class BlogPostEntity implements IBlogPost{
     @Column({nullable:true})
     blogPost: string;
 
+    @Column({type:'jsonb',nullable:true,})
+    media:string[]
+
     @Column({nullable:false,default:0})
     likes: number;
 

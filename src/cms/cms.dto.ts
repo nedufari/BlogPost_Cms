@@ -9,7 +9,7 @@ export class MakeblogPostDto{
 
     @IsArray()
     @IsOptional()
-    pictures:string[]
+    media:string[]
 }
 
 
@@ -22,6 +22,6 @@ export class EditblogPostDto{
 
     @IsArray()
     @IsOptional()
-    pictures:string[]
+    media:string[]
 }
 

@@ -135,7 +135,7 @@ export class UserService {
 
   // verify email of admin
 
-  async SuperAdminverifyEmail(
+  async verifyEmail(
     dto: VerifyOtpDto,
   ): Promise<{ isValid: boolean; accessToken: any }> {
     const findemail = await this.otprepo.findOne({
@@ -253,7 +253,7 @@ export class UserService {
     return { message: 'New Otp verification code has been sent successfully' };
   }
 
-  async AdminsendPasswordResetLink(
+  async sendPasswordResetLink(
     dto: SendPasswordResetLinkDto,
   ): Promise<{ message: string }> {
     const isEmailReistered = await this.userRepo.findOne({
@@ -291,7 +291,7 @@ export class UserService {
     return { message: 'the password reset link has been sent successfully' };
   }
 
-  async AdminfinallyResetPassword(
+  async finallyResetPassword(
     dto: FinallyResetPasswordDto,
   ): Promise<{ message: string }> {
     const verifyuser = await this.userRepo.findOne({
@@ -328,7 +328,7 @@ export class UserService {
 
   //login admin
 
-  async loginAdmin(logindto: Logindto) {
+  async login(logindto: Logindto) {
     const findadmin = await this.userRepo.findOne({
       where: { email: logindto.email },
     });

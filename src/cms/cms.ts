@@ -4,6 +4,7 @@ import { UserEntity } from "src/Entity/user.entity"
 export interface IBlogPost{
     id:number
     blogPost:string
+    media:string[]
     createdAt:Date
     likes:number
     blogger:UserEntity
@@ -14,20 +15,36 @@ export interface IBlogPost{
 
 export interface IBlogPostView{
     blogPost:string
+    media:string[]
     createdAt:Date
     likes:number
     blogger:IBloggerInfo
-    comments:ICommentwithReplies
+   
 
 }
-
-
-interface IBloggerInfo{
-    fullname:string
-    profilepicture:string
+export interface IBlogPostViewWithComment {
+    blogPost: string;
+    media: string[];
+    createdAt: Date;
+    likes: number;
+    blogger: IBloggerInfo;
+    comments: ICommentWithReplies[];
 }
 
-interface ICommentwithReplies{
-    comment:string
-    replies:string[]
+interface IBloggerInfo {
+    fullname: string;
+    profilepicture: string;
+}
+
+interface ICommentWithReplies {
+    comment: string;
+    madeAT: Date;
+    made_by: IBloggerInfo;
+    replies: IReply[];
+}
+
+interface IReply {
+    reply: string;
+    repliedAt: Date;
+    replied_by: IBloggerInfo;
 }

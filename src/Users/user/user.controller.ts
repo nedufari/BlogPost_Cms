@@ -15,7 +15,7 @@ export class UserController{
 
     @Post('/verify-email')
     async Verify_email(@Body()dto:VerifyOtpDto):Promise<{isValid:boolean; accessToken:any}>{
-        return await this.userservice.SuperAdminverifyEmail(dto)
+        return await this.userservice.verifyEmail(dto)
     }
 
  
@@ -28,18 +28,18 @@ export class UserController{
 
     @Post('/send-password-reset-link')
     async sendPasswordResetLink (@Body()dto:SendPasswordResetLinkDto):Promise<{message:string}>{
-        return await this.userservice.AdminsendPasswordResetLink(dto)
+        return await this.userservice.sendPasswordResetLink(dto)
     }
 
     @Patch('/reset-password')
     async ResetPassword(@Body()dto:FinallyResetPasswordDto):Promise<{message:string}>{
-        return await this.userservice.AdminfinallyResetPassword(dto)
+        return await this.userservice.finallyResetPassword(dto)
 
     }
 
     @Post('/login')
     async Login(@Body()dto:Logindto){
-        return await this.userservice.loginAdmin(dto)
+        return await this.userservice.login(dto)
     }
 
 
