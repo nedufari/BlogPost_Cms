@@ -192,7 +192,7 @@ import { MailerService } from "@nestjs-modules/mailer";
          
           <div class="instructions">
             <p>
-              You are getting this email because, you just signed up as a Super Admin on Ease Hub .
+              You are getting this email because, you just signed up as a new User on Blogz .
             </p>      
             <p>
               Please use the verication link sent to complete your registration process.
@@ -201,10 +201,10 @@ import { MailerService } from "@nestjs-modules/mailer";
               If you didn't request this Verification Link, please disregard this email. Your data is secure with us.
             </p>
             <p>
-              For any questions or assistance, contact our support team at <a class="button" href="mailto:support@elfevents.com">support@elfevents.com</a>
+              For any questions or assistance, contact our support team at <a class="button" href="mailto:support@blogz.com">support@blogz.com</a>
             </p>
           </div>
-          <p class="footer">EASE HUB <br> powered by ElfEvents</p>
+          <p class="footer">BLOGZ <br> powered by nedsolution</p>
         </div>
       </body>
       </html>
@@ -290,7 +290,7 @@ import { MailerService } from "@nestjs-modules/mailer";
             <p class="otp">Your Password Reset Token : <span class="otp-code">${resetlink}</span></p>
             <div class="instructions">
               <p>
-                We are sorry you couldn't get access into Ease Hub, the elfevents management system. Please use the Reset Token  provided above to enter a new password.
+                We are sorry you couldn't get access into BLOGZ, a blogpost Content Management System. Please use the Reset Token  provided above to enter a new password.
               </p>
               <p>
                 The password reset token is valid for a limited time, and it should be used to complete the password reset process.
@@ -299,10 +299,10 @@ import { MailerService } from "@nestjs-modules/mailer";
                 If you did not request this reset link, please ignore this email. Your account will remain secure.
               </p>
               <p >
-              For any questions or assistance, contact our support team at <a class="button" href="mailto:support@elfevents.com">support@elfevents.com</a>
+              For any questions or assistance, contact our support team at <a class="button" href="mailto:support@blogz.com">support@blogz.com</a>
               </p>
             </div>
-            <p class="footer">EASE HUB  <br> powered by ElfEvents</p>
+            <p class="footer">BLOGZ  <br> powered by nedsolutions</p>
           </div>
         </body>
       </html>
