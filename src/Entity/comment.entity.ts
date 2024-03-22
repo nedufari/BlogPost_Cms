@@ -8,6 +8,7 @@ export interface IComment{
     id:number,
     comment:string,
     madeAT:Date,
+    likes:number
     made_by: UserEntity
     blogPost: BlogPostEntity
     replies:RepliesEntity[]
@@ -24,6 +25,9 @@ export class CommentsEntity implements IComment{
     @Column({nullable:false})
     comment: string;
 
+    @Column({nullable:true,default:0})
+    likes: number;
+
     @CreateDateColumn()
     madeAT: Date;
 
@@ -33,6 +37,6 @@ export class CommentsEntity implements IComment{
     @ManyToOne(()=>BlogPostEntity,blogpost=>blogpost.blogPost)
     blogPost:BlogPostEntity
 
-    @OneToMany(()=>RepliesEntity,reply=>reply.comment_replied)
+    @OneToMany(()=>RepliesEntity,reply=>reply.comment_replied,{cascade:true})
     replies:RepliesEntity[]
 }

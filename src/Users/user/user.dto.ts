@@ -4,8 +4,10 @@ import { Match } from "src/helpers/match.decorator"
 
 export class CreateUserDto{
     @IsString()
+    @IsNotEmpty()
     fullname:string
 
+    @IsNotEmpty()
     @IsEmail()
     email:string
 

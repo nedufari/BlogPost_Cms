@@ -1,4 +1,5 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, IsStrongPassword } from "class-validator";
+import { IsEmail, IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString, IsStrongPassword } from "class-validator";
+import { LikeAction } from "src/Enum/general.enum";
 import { Match } from "src/helpers/match.decorator";
 
 export class ChangePassword{
@@ -95,9 +96,9 @@ export class Logindto{
    
 }
 
-export class commentDto{
+export class CommentDto{
     @IsString()
-    @IsOptional()
+    @IsNotEmpty()
     comment:string
 
 }
@@ -106,8 +107,14 @@ export class commentDto{
 
 export class ReplyDto{
     @IsString()
-    @IsOptional()
+    @IsNotEmpty()
     reply:string
     
+}
+
+export class LikeDto{
+    @IsEnum(LikeAction)
+    @IsNotEmpty()
+    like:LikeAction
 }
 

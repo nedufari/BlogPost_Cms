@@ -122,14 +122,14 @@ export class UserService {
     //save the notification
     const notification = new Notifications();
     notification.account = admin.fullname;
-    notification.subject = 'New Super Admin!';
+    notification.subject = 'New User Created!';
     notification.notification_type = NotificationType.ADMIN_CREATED;
     notification.message = `new admin created successfully `;
     await this.noticicationrepo.save(notification);
 
     return {
       message:
-        'you have successfully registered as an admin, please check your mail for the otp verification',
+        'you have successfully registered as a user, please check your mail for the otp verification',
     };
   }
 

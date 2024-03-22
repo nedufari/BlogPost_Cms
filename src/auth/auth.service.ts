@@ -16,7 +16,7 @@ export class AuthService{
         switch(role){
             case "admin":
                 return await this.adminrepo.findOne({where:{id:id}})
-            case "ordinaryUser":
+            case "user":
                 return await this.userrepo.findOne({where:{id:id}})
             default:
                 return null

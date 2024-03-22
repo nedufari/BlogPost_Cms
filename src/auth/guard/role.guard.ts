@@ -6,10 +6,10 @@ import {ROLE_KEY} from "src/auth/decorators/role.decorator"
 
 // GUARD FOR THE ADMINTYPE
 @Injectable()
-export class AdmintypeGuard implements CanActivate{
+export class RoleGuard implements CanActivate{
     constructor(private reflector:Reflector){}
     canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
-        console.log('AdmintypeGuard executed');
+        console.log('RoleGuard executed');
         
         const requiredRole=this.reflector.getAllAndOverride<Role[]>(ROLE_KEY,[
             context.getHandler(),

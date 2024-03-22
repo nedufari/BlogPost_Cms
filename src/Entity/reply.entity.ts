@@ -8,6 +8,7 @@ export interface IReplies{
     repliedAt:Date
     comment_replied :CommentsEntity,
     replied_by : UserEntity
+    likes:number
 }
 
 
@@ -19,13 +20,16 @@ export class RepliesEntity implements IReplies{
     @Column({nullable:true})
     reply: string;
 
+    @Column({nullable:true,default:0})
+    likes: number;
+
     @CreateDateColumn()
     repliedAt: Date;
 
     @ManyToOne(()=>UserEntity, user=>user.comment_replies)
     replied_by: UserEntity;
 
-    @ManyToOne(()=>CommentsEntity, comment=>comment.replies)
+    @ManyToOne(()=>CommentsEntity, comment=>comment.replies,{onDelete:"CASCADE"})
     comment_replied: CommentsEntity;
     
 }

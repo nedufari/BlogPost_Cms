@@ -38,6 +38,7 @@ interface IBloggerInfo {
 
 interface ICommentWithReplies {
     comment: string;
+    likes:number
     madeAT: Date;
     made_by: IBloggerInfo;
     replies: IReply[];
@@ -46,5 +47,6 @@ interface ICommentWithReplies {
 interface IReply {
     reply: string;
     repliedAt: Date;
+    likes:number
     replied_by: IBloggerInfo;
 }
